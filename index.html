@@ -18,16 +18,21 @@
     <!-- Floating Hearts Background -->
     <div class="hearts-container" id="heartsContainer"></div>
 
+    <!-- Falling Rose Petals -->
+    <div class="petals-container" id="petalsContainer"></div>
+
     <!-- Background Music Player -->
     <div class="music-player">
         <button id="musicToggle" class="music-btn" aria-label="Play/Pause Music">
             <span class="play-icon">▶</span>
             <span class="pause-icon">❚❚</span>
         </button>
-        <span class="music-label">Our Song</span>
+        <span class="music-label" id="musicLabel">Our Songs</span>
     </div>
-    <audio id="bgMusic" loop>
+    <audio id="bgMusic">
+        <source src="Music/Tu Hai (PenduJatt.Com.Se).mp3" type="audio/mpeg">
         <source src="Music/Genius Movie Song Download Mp3 Ringtone Pagalworld.mp3" type="audio/mpeg">
+        <source src="Music/Kiliye – Arm Movie _ Malayalam Song Ringtone - MobCup.Com.Co.mp3" type="audio/mpeg">
     </audio>
 
     <!-- Header Slideshow -->

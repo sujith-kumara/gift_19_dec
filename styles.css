@@ -63,6 +63,82 @@ body {
     }
 }
 
+/* Falling Rose Petals */
+.petals-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.rose-petal {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: linear-gradient(135deg, #ff1744 0%, #c62828 50%, #8b0000 100%);
+    border-radius: 50% 0 50% 0;
+    opacity: 0;
+    animation: fallPetal 12s ease-in infinite;
+    pointer-events: none;
+    box-shadow: 0 2px 5px rgba(139, 0, 0, 0.3);
+}
+
+.rose-petal::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3), transparent);
+    border-radius: inherit;
+}
+
+@keyframes fallPetal {
+    0% {
+        opacity: 0;
+        transform: translateY(-10vh) translateX(0) rotate(0deg);
+    }
+
+    10% {
+        opacity: 0.9;
+    }
+
+    90% {
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(110vh) translateX(100px) rotate(720deg);
+    }
+}
+
+/* Petal sway variations */
+.rose-petal:nth-child(2n) {
+    animation-duration: 14s;
+    width: 12px;
+    height: 12px;
+}
+
+.rose-petal:nth-child(3n) {
+    animation-duration: 16s;
+    width: 18px;
+    height: 18px;
+}
+
+.rose-petal:nth-child(4n) {
+    animation-duration: 13s;
+}
+
+.rose-petal:nth-child(5n) {
+    animation-duration: 15s;
+    width: 14px;
+    height: 14px;
+}
+
 /* Music Player */
 .music-player {
     position: fixed;

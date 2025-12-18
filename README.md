@@ -4,12 +4,14 @@ A beautiful, heartfelt single-page website created to celebrate our first propos
 
 ## 🌟 Features
 
-- **Handwritten Love Letter**: Beautiful handwriting-style fonts with animated writing effect
+- **Live Typing Animation**: Letter appears character by character with a blinking cursor, like it's being written in real-time
+- **Music Playlist**: Three romantic songs playing sequentially in a continuous loop
 - **Photo Slideshows**: Automatic looping slideshows in header and footer using all our precious memories
-- **Background Music**: Romantic music playing continuously with play/pause controls
+- **Falling Red Rose Petals**: Beautiful red rose animations cascading down the screen
 - **Floating Hearts**: Gentle heart animations creating a romantic atmosphere
+- **Handwritten Style**: Beautiful handwriting-style fonts with paper texture
 - **Fully Responsive**: Looks beautiful on both mobile and desktop devices
-- **Paper Texture**: Authentic letter-writing feel with subtle textures and effects
+- **GitHub Pages Ready**: Simple static website, easy to deploy
 
 ## 📁 Folder Structure
 
@@ -164,8 +166,10 @@ Replace the music file in the `Music/` folder and update the filename in `index.
 
 ## 🎁 Special Features
 
-- **Handwriting Animation**: Text appears as if being written in real-time
+- **Live Typing Effect**: Text appears character by character with a blinking cursor, creating an intimate feeling
+- **Music Playlist**: Three songs play sequentially and loop continuously
 - **Dual Slideshows**: Header and footer show different photos at different speeds
+- **Falling Rose Petals**: Red rose petals cascade down the screen with realistic motion
 - **Floating Hearts**: Romantic hearts float up the screen continuously
 - **Sparkles**: Subtle sparkle effects on the letter paper
 - **Music Controls**: Visible play/pause button in the top-right corner

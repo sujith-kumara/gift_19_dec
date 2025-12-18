@@ -104,10 +104,36 @@ function startSlideshows() {
     }, 5000);
 }
 
-// Background Music Control
+// Background Music Playlist
+const playlist = [
+    'Music/Tu Hai (PenduJatt.Com.Se).mp3',
+    'Music/Genius Movie Song Download Mp3 Ringtone Pagalworld.mp3',
+    'Music/Kiliye – Arm Movie _ Malayalam Song Ringtone - MobCup.Com.Co.mp3'
+];
+
+let currentSongIndex = 0;
 const bgMusic = document.getElementById('bgMusic');
 const musicToggle = document.getElementById('musicToggle');
+const musicLabel = document.getElementById('musicLabel');
 let isPlaying = false;
+
+// Load the first song
+function loadSong(index) {
+    bgMusic.src = playlist[index];
+    bgMusic.load();
+}
+
+// Play next song in playlist
+function playNextSong() {
+    currentSongIndex = (currentSongIndex + 1) % playlist.length;
+    loadSong(currentSongIndex);
+    if (isPlaying) {
+        bgMusic.play().catch(err => console.log('Playback error:', err));
+    }
+}
+
+// When a song ends, play the next one
+bgMusic.addEventListener('ended', playNextSong);
 
 musicToggle.addEventListener('click', () => {
     if (isPlaying) {
@@ -124,6 +150,7 @@ musicToggle.addEventListener('click', () => {
 
 // Try to autoplay music (may be blocked by browser)
 window.addEventListener('load', () => {
+    loadSong(0);
     bgMusic.play().then(() => {
         isPlaying = true;
         musicToggle.classList.add('playing');
@@ -160,6 +187,35 @@ function createHeart() {
 // Create hearts periodically
 function startHearts() {
     setInterval(createHeart, 800);
+}
+
+// Falling Rose Petals Animation
+function createRosePetal() {
+    const petalsContainer = document.getElementById('petalsContainer');
+    const petal = document.createElement('div');
+    petal.classList.add('rose-petal');
+
+    // Random horizontal position
+    petal.style.left = Math.random() * 100 + '%';
+
+    // Random animation delay
+    petal.style.animationDelay = Math.random() * 5 + 's';
+
+    // Random horizontal drift
+    const drift = -50 + Math.random() * 100;
+    petal.style.setProperty('--drift', drift + 'px');
+
+    petalsContainer.appendChild(petal);
+
+    // Remove petal after animation completes
+    setTimeout(() => {
+        petal.remove();
+    }, 16000);
+}
+
+// Create rose petals periodically
+function startRosePetals() {
+    setInterval(createRosePetal, 600);
 }
 
 // Add sparkles to letter paper
@@ -276,6 +332,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Start floating hearts
     startHearts();
+
+    // Start falling rose petals
+    startRosePetals();
 
     // Start sparkles
     startSparkles();
